@@ -5,7 +5,7 @@ module.exports = {
 	execute(message,client) {
     let embedContent = message.content.substring(9);
     let embed = new MessageEmbed();
-    embed.setImage(client.user.avatarURL());
+    embed.setImage(message.author.avatarURL());
     message.channel.send(embed);
 	},
 };
