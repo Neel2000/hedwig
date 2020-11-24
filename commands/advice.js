@@ -1,9 +1,9 @@
 const snekfetch = require("snekfetch")
-module.exports = {
+module.exports = async {
 	name: 'snekfetch',
 	description: 'snekfetch',
 	args: true,
-	async execute(message, client,args) {
+	execute(message, client,args) {
 		 try {
         		const { body } = await snekfetch.get('http://api.adviceslip.com/advice');
         		message.channel.send(JSON.parse(body.toString()).slip.advice);
