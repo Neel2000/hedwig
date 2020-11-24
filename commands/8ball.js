@@ -6,7 +6,7 @@ exports.run = (client, message, args) => {
     const embed = new MessageEmbed()
     .setColor(0x00A2E8)
     .addField("You asked", reason)
-    .addField("Orcinus says", ball[Math.floor(Math.random () * ball.length)])
+    .addField("Hedwig says", ball[Math.floor(Math.random () * ball.length)])
     .setThumbnail("http://www.pngmart.com/files/3/8-Ball-Pool-Transparent-PNG.png")
     message.channel.send({embed})
 }
