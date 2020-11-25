@@ -1,7 +1,7 @@
 const snekfetch = require("snekfetch")
 module.exports = {
-	name: 'snekfetch',
-	description: 'snekfetch',
+	name: 'advice',
+	description: 'advice',
 	args: true,
 	async execute(message, client,args) {
 		 try {
