@@ -25,7 +25,6 @@ const cooldowns = new Discord.Collection();
 
 client.once('ready', () => {
 	console.log('Ready!');
-	console.log(client.commands)
 });
 
 client.on('message', async (message) => {
@@ -33,10 +32,8 @@ client.on('message', async (message) => {
 
 	const args = message.content.slice(prefix.length).trim().split(/ +/);
 	const commandName = args.shift().toLowerCase();
-        console.log("exectuing command "+ commandName)
 	const command = client.commands.get(commandName)
 		|| client.commands.find(cmd => cmd.aliases && cmd.aliases.includes(commandName));
-        console.log("command "+command)
 	if (!command) return;
 
 	if (command.guildOnly && message.channel.type === 'dm') {
