@@ -35,7 +35,7 @@ client.on('message', async (message) => {
         console.log("exectuing command "+ commandName)
 	const command = client.commands.get(commandName)
 		|| client.commands.find(cmd => cmd.aliases && cmd.aliases.includes(commandName));
-
+        console.log("command "+command)
 	if (!command) return;
 
 	if (command.guildOnly && message.channel.type === 'dm') {
