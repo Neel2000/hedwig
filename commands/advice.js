@@ -8,7 +8,7 @@ module.exports = {
 			 snekfetch.get('http://api.adviceslip.com/advice').then(body => {
 				 console.log(body.toString());
 				 message.channel.send(JSON.parse(body.toString()).slip.advice);
-			 }
+			 })
         	} catch (err) {
         		message.channel.send(`An error occurred: \`${err.message}\`. Try again later!`);
         	}
