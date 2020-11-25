@@ -5,10 +5,7 @@ module.exports = {
 	args: true,
 	execute(message, client,args) {
 		 try {
-        		 console.log("starting advice")
-			 const { body } = snekfetch.get('http://api.adviceslip.com/advice');
-			 console.log("got advice "+ body)
-        		message.channel.send(JSON.parse(body.toString()).slip.advice);
+			 snekfetch.get('http://api.adviceslip.com/advice').then(body => message.channel.send(JSON.parse(body.toString()).slip.advice)); // r.body is buffer
         	} catch (err) {
         		message.channel.send(`An error occurred: \`${err.message}\`. Try again later!`);
         	}
